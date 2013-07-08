@@ -16,6 +16,7 @@
 #include "RageLog.h"
 #include "RageUtil.h"
 
+#include <cstring>
 #include <cerrno>
 #include <set>
 
