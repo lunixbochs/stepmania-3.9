@@ -12,10 +12,6 @@
 #include "DialogDriver_Win32.h"
 #endif
 
-#if defined(DARWIN)
-#include "DialogDriver_Cocoa.h"
-#endif
-
 static DialogDriver *g_pImpl = NULL;
 static DialogDriver_Null g_NullDriver;
 static bool g_bWindowed = false;
@@ -40,9 +36,6 @@ void Dialog::Init()
 
 #if defined(HAVE_DIALOG_WIN32)
 			if( !DriversToTry[i].CompareNoCase("Win32") ) g_pImpl = new DialogDriver_Win32;
-#endif
-#if defined(HAVE_DIALOG_COCOA)
-			if( !DriversToTry[i].CompareNoCase("Cocoa") ) g_pImpl = new DialogDriver_Cocoa;
 #endif
 			if( !DriversToTry[i].CompareNoCase("Null") ) g_pImpl = new DialogDriver_Null;
 		}
