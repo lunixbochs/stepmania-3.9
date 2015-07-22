@@ -74,6 +74,7 @@ ArchHooks_darwin::~ArchHooks_darwin()
 
 void ArchHooks_darwin::DumpDebugInfo()
 {
+    /*
     CString systemVersion;
     long ram;
     long vRam;
@@ -85,7 +86,7 @@ void ArchHooks_darwin::DumpDebugInfo()
     OSErr err = noErr;
     long code;
 
-    /* Get system version */
+    // Get system version
     err = Gestalt(gestaltSystemVersion, &code);
     if (err == noErr)
     {
@@ -101,7 +102,7 @@ void ArchHooks_darwin::DumpDebugInfo()
     else
         systemVersion = "Unknown system version";
             
-    /* Get memory */
+    // Get memory
     err = Gestalt(gestaltLogicalRAMSize, &vRam);
     if (err != noErr)
         vRam = 0;
@@ -111,7 +112,7 @@ void ArchHooks_darwin::DumpDebugInfo()
         vRam -= ram;
         if (vRam < 0)
             vRam = 0;
-        ram /= 1048576; /* 1048576 = 1024*1024 */
+        ram /= 1048576; // 1048576 = 1024*1024
         vRam /= 1048576;
     }
     else
@@ -120,8 +121,8 @@ void ArchHooks_darwin::DumpDebugInfo()
         vRam = 0;
     }
     
-    /* XXX Do this in some manner other than using Gestalt */
-    /* Get processor */
+    // XXX Do this in some manner other than using Gestalt
+    // Get processor
     numProcessors = MPProcessorsScheduled();
     err = Gestalt(gestaltNativeCPUtype, &code);
     if (err == noErr)
@@ -150,13 +151,13 @@ void ArchHooks_darwin::DumpDebugInfo()
     err = Gestalt(gestaltProcClkSpeed, &processorSpeed);
     if (err != noErr)
         processorSpeed = 0;
-    /* Get machine */
+    // Get machine
     err = Gestalt(gestaltMachineType, &code);
     if (err == noErr)
     {
         switch (code)
         {
-            /* PowerMacs */
+            // PowerMacs
             CASE_GESTALT(machine, PowerMac4400);
             CASE_GESTALT(machine, PowerMac4400_160);
             CASE_GESTALT(machine, PowerMac5200);
@@ -177,7 +178,7 @@ void ArchHooks_darwin::DumpDebugInfo()
             CASE_GESTALT(machine, PowerMac8100_110);
             CASE_GESTALT(machine, PowerMac8500);
             CASE_GESTALT(machine, PowerMac9500);
-            /* upgrade cards */
+            // upgrade cards
             CASE_GESTALT(machine, PowerMacLC475);
             CASE_GESTALT(machine, PowerMacLC575);
             CASE_GESTALT(machine, PowerMacQuadra610);
@@ -189,7 +190,7 @@ void ArchHooks_darwin::DumpDebugInfo()
             CASE_GESTALT(machine, PowerMacQuadra950);
             CASE_GESTALT(machine, PowerMacCentris610);
             CASE_GESTALT(machine, PowerMacCentris650);
-            /* PowerBooks */
+            // PowerBooks
             CASE_GESTALT(machine, PowerBook1400);
             CASE_GESTALT(machine, PowerBook2400);
             CASE_GESTALT(machine, PowerBook3400);
@@ -197,7 +198,7 @@ void ArchHooks_darwin::DumpDebugInfo()
             CASE_GESTALT(machine, PowerBookG3);
             CASE_GESTALT(machine, PowerBookG3Series);
             CASE_GESTALT(machine, PowerBookG3Series2);
-            /* NewWorld */
+            // NewWorld
             CASE_GESTALT(machine, PowerMacNewWorld);
             CASE_GESTALT(machine, PowerMacG3);
             default:
@@ -212,11 +213,12 @@ void ArchHooks_darwin::DumpDebugInfo()
     else
         machine = "unknown machine";
     
-    /* Send all of the information to the log */
+    // Send all of the information to the log
     LOG->Info(machine.c_str());
     LOG->Info("Processor: %s (%ld)", processor.c_str(), numProcessors);
     LOG->Info("%s", systemVersion.c_str());
     LOG->Info("Memory: %ld MB total, %ld MB swap", ram, vRam);
+    */
 }
 
 void ArchHooks_darwin::EnterTimeCriticalSection()

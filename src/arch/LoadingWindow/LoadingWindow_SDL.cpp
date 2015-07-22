@@ -2,8 +2,8 @@
 
 #include "SDL_utils.h"
 #include "RageSurface_Load_XPM.h"
-#include "SDL_video.h"
-#include "SDL_rotozoom.h"
+#include <SDL/SDL_video.h>
+#include <SDL/SDL_rotozoom.h>
 #include "LoadingWindow_SDL.h"
 #include "loading.xpm"
 #include "StepMania.xpm" /* icon */

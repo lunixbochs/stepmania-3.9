@@ -1,6 +1,8 @@
 #ifndef SIGNAL_HANDLER_H
 #define SIGNAL_HANDLER_H
 
+#define _XOPEN_SOURCE
+
 #include <csignal>
 #include <ucontext.h>
 #include <cstring>

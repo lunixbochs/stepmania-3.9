@@ -1,10 +1,9 @@
-#include "StdString.h"
-#include "Crash.h"
 #include "archutils/Unix/CrashHandler.h"
 #include <Carbon/Carbon.h>
 
 void InformUserOfCrash( const CString &sPath )
 {
+    /*
 	CFStringRef error;
 	
 	error = CFStringCreateWithCString(kCFAllocatorDefault,
@@ -39,6 +38,7 @@ void InformUserOfCrash( const CString &sPath )
     CFRelease(OK);
     CFRelease(Cancel);
     CFRelease(error);
+    */
 }
 
 /*

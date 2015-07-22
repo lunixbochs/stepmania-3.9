@@ -1,7 +1,7 @@
 #include <mach/mach_types.h>
 #include <mach/thread_act.h>
 #include <mach/mach_init.h>
-#include "Backtrace.h"
+// #include "Backtrace.h"
 
 bool SuspendThread(uint64_t threadHandle)
 {
@@ -18,9 +18,11 @@ uint64_t GetCurrentThreadId()
 	return mach_thread_self();
 }
 
-bool GetThreadBacktraceContext(uint64_t iID, BacktraceContext *ctx)
+bool GetThreadBacktraceContext(uint64_t iID, void *ctx)
 {
-	/* Can't GetThreadBacktraceContext the current thread. */
+    return false;
+    /*
+	// Can't GetThreadBacktraceContext the current thread.
 	ASSERT(iID != GetCurrentThreadId());
 
 	SuspendThread( iID );
@@ -35,6 +37,7 @@ bool GetThreadBacktraceContext(uint64_t iID, BacktraceContext *ctx)
 	ctx->FramePtr = (void *)state.r1;
 	ctx->PC = (void *)state.srr0;
 	return true;
+    */
 }
 	
 /*

@@ -269,6 +269,8 @@ typedef char*			PSTR;
 #include <algorithm>		// for_each, etc.
 #include <functional>		// for StdStringLessNoCase, et al
 
+using namespace std;
+
 #if defined(WIN32)
 #include <malloc.h>			// _alloca
 #endif
