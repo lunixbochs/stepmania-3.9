@@ -6,8 +6,8 @@
 /* Hack to prevent X includes from messing with our namespace: */
 #define Font X11___Font
 #define Screen X11___Screen
-#include "SDL.h"
-#include "SDL_syswm.h"          // for SDL_SysWMinfo
+#include <SDL/SDL.h>
+#include <SDL/SDL_syswm.h>          // for SDL_SysWMinfo
 #undef Font
 #undef Screen
 struct RageSurface;

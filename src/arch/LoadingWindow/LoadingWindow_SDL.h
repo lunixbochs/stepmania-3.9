@@ -2,7 +2,7 @@
 #define LOADING_WINDOW_SDL_H
 
 #include "LoadingWindow.h"
-#include "SDL.h"
+#include <SDL/SDL.h>
 
 #ifdef _XBOX
 #define XFONT_TRUETYPE 

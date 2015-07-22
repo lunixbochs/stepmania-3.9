@@ -1,6 +1,6 @@
 #include "global.h"
 
-#include "SDL.h"
+#include <SDL/SDL.h>
 #include "SDL_utils.h"
 #include "SDL_rotozoom.h"	// for setting icon
 #include "RageSurface_Load.h"
