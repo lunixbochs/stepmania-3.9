@@ -100,7 +100,7 @@ void LoadFromString( lua_State *L, const CString &str )
 {
 	ChunkReaderData data;
 	data.buf = &str;
-	int ret = lua_load( L, ChunkReaderString, &data, "in" );
+	int ret = lua_load( L, ChunkReaderString, &data, "in", NULL );
 
 	if( ret )
 	{
@@ -134,7 +134,7 @@ bool Lua::RunExpression( const CString &str )
 try {
 	if( setjmp(jbuf) )
 		RageException::Throw("%s", jbuf_error.c_str());
-	lua_State *L = lua_open();
+	lua_State *L = luaL_newstate();
 	ASSERT( L );
 
 	lua_atpanic( L, LuaPanic );
