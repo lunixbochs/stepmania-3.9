@@ -19,7 +19,8 @@ NAMESPACE_BEGIN(CryptoPP)
 //CRYPTOPP_COMPILE_ASSERT(sizeof(dword) == 2*sizeof(word));
 
 const std::string BufferedTransformation::NULL_CHANNEL;
-const NullNameValuePairs g_nullNameValuePairs;
+NullNameValuePairs *s_pNullNameValuePairs(new NullNameValuePairs);
+const NullNameValuePairs g_nullNameValuePairs = *s_pNullNameValuePairs;
 
 BufferedTransformation & TheBitBucket()
 {
