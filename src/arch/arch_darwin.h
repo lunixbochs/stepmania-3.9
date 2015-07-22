@@ -2,7 +2,6 @@
 #define ARCH_DARWIN_H
 
 #include "Sound/RageSoundDriver_CA.h"
-#include "Sound/RageSoundDriver_QT1.h"
 #include "LoadingWindow/LoadingWindow_Cocoa.h"
 #include "ArchHooks/ArchHooks_darwin.h"
 
