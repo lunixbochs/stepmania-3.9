@@ -2793,7 +2793,7 @@ typedef ptrdiff_t GLsizeiptrARB;
 #ifndef GL_ARB_shader_objects
 /* GL types for handling shader object handles and characters */
 typedef char GLcharARB;		/* native character */
-typedef unsigned int GLhandleARB;	/* shader object handle */
+typedef void *GLhandleARB;	/* shader object handle */
 #endif
 
 #ifndef GL_NV_half_float
