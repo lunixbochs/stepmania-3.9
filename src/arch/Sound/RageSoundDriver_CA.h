@@ -7,11 +7,11 @@ struct AudioTimeStamp;
 struct AudioBufferList;
 struct OpaqueAudioConverter;
 typedef struct OpaqueAudioConverter *AudioConverterRef;
-typedef unsigned long UInt32;
+typedef unsigned int UInt32;
 typedef UInt32 AudioDeviceID;
 typedef UInt32 AudioDevicePropertyID;
 typedef unsigned char Boolean;
-typedef long OSStatus;
+typedef int OSStatus;
 class CAAudioHardwareDevice;
 class RageSoundBase;
 

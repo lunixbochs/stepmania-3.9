@@ -1,8 +1,6 @@
 #ifndef CRASH_HANDLER_H
 #define CRASH_HANDLER_H
 
-#define _XOPEN_SOURCE
-
 #include <cstring>
 #include "StdString.h"
 

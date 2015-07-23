@@ -2,8 +2,10 @@
 #define ARCH_DARWIN_H
 
 #include "Sound/RageSoundDriver_CA.h"
-#include "LoadingWindow/LoadingWindow_Cocoa.h"
+#include "LoadingWindow/LoadingWindow_SDL.h"
 #include "ArchHooks/ArchHooks_darwin.h"
+
+#define SUPPORT_SDL_INPUT
 
 #endif
 

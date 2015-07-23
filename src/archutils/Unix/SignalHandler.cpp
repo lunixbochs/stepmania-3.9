@@ -15,7 +15,6 @@
 #include <cerrno>
 
 #if defined(DARWIN)
-extern "C" int sigaltstack( const struct sigaltstack *ss, struct sigaltstack *oss );
 #define MAP_ANONYMOUS MAP_ANON
 #endif
 

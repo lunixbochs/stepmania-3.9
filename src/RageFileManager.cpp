@@ -117,7 +117,7 @@ static void ChangeToDirOfExecutable( CString argv0 )
 #if defined(_WINDOWS)
 	chdir( DirOfExecutable + "/.." );
 #elif defined(DARWIN)
-	chdir(DirOfExecutable + "/../../..");
+	// chdir(DirOfExecutable + "/../../..");
 #endif
 }
 

@@ -371,6 +371,7 @@ void ForceCrashHandlerDeadlock( CString reason, uint64_t iID )
 	CrashData crash;
 	memset( &crash, 0, sizeof(crash) );
 
+#ifndef __APPLE__
 	crash.type = CrashData::FORCE_CRASH;
 
 	GetBacktrace( crash.BacktracePointers[0], BACKTRACE_MAX_SIZE, NULL );
@@ -409,6 +410,7 @@ void ForceCrashHandlerDeadlock( CString reason, uint64_t iID )
 
 	strncpy( crash.reason, reason, min(sizeof(crash.reason) - 1, reason.length()) );
 	crash.reason[ sizeof(crash.reason)-1 ] = 0;
+#endif
 
 	RunCrashHandler( &crash );
 
@@ -422,6 +424,7 @@ void CrashSignalHandler( int signal, siginfo_t *si, const ucontext_t *uc )
 	CrashData crash;
 	memset( &crash, 0, sizeof(crash) );
 
+#ifndef __APPLE__
 	crash.type = CrashData::SIGNAL;
 	crash.signal = signal;
 	crash.si = *si;
@@ -431,6 +434,7 @@ void CrashSignalHandler( int signal, siginfo_t *si, const ucontext_t *uc )
 	GetBacktrace( crash.BacktracePointers[0], BACKTRACE_MAX_SIZE, &ctx );
 
 	strncpy( crash.m_ThreadName[0], RageThread::GetCurThreadName(), sizeof(crash.m_ThreadName[0])-1 );
+#endif
 
 	RunCrashHandler( &crash );
 }

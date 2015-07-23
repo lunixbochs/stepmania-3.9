@@ -37,9 +37,6 @@ LoadingWindow *MakeLoadingWindow()
 #ifdef HAVE_LOADING_WINDOW_GTK
 			if(!DriversToTry[i].CompareNoCase("Gtk")) ret = new LoadingWindow_Gtk;
 #endif
-#ifdef HAVE_LOADING_WINDOW_COCOA
-			if(!DriversToTry[i].CompareNoCase("Cocoa")) ret = new LoadingWindow_Cocoa;
-#endif
 #ifdef HAVE_LOADING_WINDOW_SDL
 			if(!DriversToTry[i].CompareNoCase("SDL")) ret = new LoadingWindow_SDL;
 #endif
@@ -71,9 +68,7 @@ void MakeInputHandlers(vector<InputHandler *> &Add)
 	// Add.push_back(new InputHandler_DInput);
 #endif
 
-#if defined(SUPPORT_SDL_INPUT)
 	Add.push_back(new InputHandler_SDL);
-#endif
 }
 
 RageSoundDriver *MakeRageSoundDriver(CString drivers)
